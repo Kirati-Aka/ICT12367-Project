@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>ลงคะแนนโพล</title>
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+  <h2 class="mb-4 text-center">{{ poll.title }}</h2>
+  <p class="lead text-center">{{ poll.question }}</p>
+
+  <form method="post">
+    {% csrf_token %}
+    <div class="list-group">
+      {% for option in poll.option_set.all %}
+      <label class="list-group-item">
+        <input type="radio" name="option" value="{{ option.id }}" required>
+        {{ option.text }}
+      </label>
+      {% endfor %}
+    </div>
+    <div class="mt-4 text-center">
+      <button type="submit" class="btn btn-success">ส่งคะแนนโหวต</button>
+      <a href="/" class="btn btn-secondary">ย้อนกลับ</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

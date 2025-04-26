@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}
+<div class="container my-5">
+  <h2 class="mb-4">สร้างโพลใหม่</h2>
+  <form id="pollForm" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="title" class="form-label">ชื่อโพล</label>
+      <input type="text" class="form-control" id="title" name="title" placeholder="กรอกชื่อโพล..." required>
+    </div>
+
+    <div class="mb-3">
+      <label for="question" class="form-label">คำถาม</label>
+      <input type="text" class="form-control" id="question" name="question" placeholder="กรอกคำถาม..." required>
+    </div>
+
+    <div id="options">
+      <label class="form-label">ตัวเลือก</label>
+      <div class="input-group mb-2">
+        <input type="text" class="form-control" name="option[]" placeholder="ตัวเลือกที่ 1" required>
+      </div>
+      <div class="input-group mb-2">
+        <input type="text" class="form-control" name="option[]" placeholder="ตัวเลือกที่ 2" required>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-outline-secondary mb-3" onclick="addOption()">+ เพิ่มตัวเลือก</button>
+    <br>
+    <button type="submit" class="btn btn-primary">สร้างโพล</button>
+  </form>
+</div>
+
+<script>
+  function addOption() {
+    const container = document.getElementById("options");
+    const optionCount = container.querySelectorAll("input").length + 1;
+
+    const inputGroup = document.createElement("div");
+    inputGroup.className = "input-group mb-2";
+
+    const input = document.createElement("input");
+    input.type = "text";
+    input.className = "form-control";
+    input.name = "option[]";
+    input.placeholder = "ตัวเลือกที่ " + optionCount;
+    input.required = true;
+
+    inputGroup.appendChild(input);
+    container.appendChild(inputGroup);
+  }
+</script>
+{% endblock %}
