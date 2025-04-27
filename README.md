@@ -47,7 +47,7 @@ ICT12367-Project/
 ├── db.sqlite3                # SQLite database
 └── requirements.txt          # Python dependencies
 ```
-⚙️ How It Works (เบื้องหลังระบบ)
+## ⚙️ How It Works (เบื้องหลังระบบ)
 Polls & Choices Models
 
 Question: Represents a single poll (question + publication date)
@@ -74,32 +74,32 @@ Use Bootstrap modals for voting
 
 Display cards for each poll dynamically
 
-🧑‍💻 How to Run Locally
+## 🧑‍💻 How to Run Locally
 1. Clone the repository
 bash
-คัดลอก
-แก้ไข
+Copy
+Edit
 git clone https://github.com/Kirati-Aka/ICT12367-Project.git
 cd ICT12367-Project
 2. Install dependencies
 bash
-คัดลอก
-แก้ไข
+Copy
+Edit
 pip install -r requirements.txt
 3. Apply database migrations
 bash
-คัดลอก
-แก้ไข
+Copy
+Edit
 python manage.py migrate
 4. Start the development server
 bash
-คัดลอก
-แก้ไข
+Copy
+Edit
 python manage.py runserver
 5. Access the application
 Open your browser at: http://127.0.0.1:8000/
 
-📚 Key Files Explained
+## 📚 Key Files Explained
 
 File / Folder	Purpose
 polls/models.py	Defines database structure (Questions, Choices)
@@ -116,12 +116,10 @@ Add poll closing dates (expire polls)
 
 Improve voting UI with AJAX (without page reload)
 
-📷 Screenshots (optional)
+## 📷 Screenshots
 ![image](https://github.com/user-attachments/assets/e70e37a5-3a81-4e26-8e46-f2a05030d722)
-<img width="1470" alt="Screenshot 2568-04-25 at 08 01 06" src="https://github.com/user-attachments/assets/e87f2a03-9b74-4f53-9f48-a92695116e05" />
 <img width="1470" alt="Screenshot 2568-04-26 at 00 30 31" src="https://github.com/user-attachments/assets/06ecb33c-0542-4719-98f9-8ba234039894" />
 
 
 
-📜 License
-This project is created for educational purposes under the ICT12367 course.
+📜 License - This project is created for educational purposes under the ICT12367 course.
