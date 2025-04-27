@@ -46,6 +46,7 @@ ICT12367-Project/
 │   └── views.py              # Views controlling the logic
 ├── db.sqlite3                # SQLite database
 └── requirements.txt          # Python dependencies
+```
 ⚙️ How It Works (เบื้องหลังระบบ)
 Polls & Choices Models
 
